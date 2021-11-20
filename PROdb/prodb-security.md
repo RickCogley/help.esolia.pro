@@ -7,7 +7,7 @@ order: 950
 
 [セキュリティおよびプライバシーポリシー](https://esolia.co.jp/prodb-security-and-privacy)ページをご覧頂き、以下の点もご参考にしてください。
 
-### Foresoft 社について
+## イソリアパートナーであるForesoft社について
 
 イソリアは Foresoft 社と、2010 年から 10 年以上、パートナーとして付き合ってます。しっかりしていて信頼のある会社で、サポートとプラットフォームは優れてます。ダウンタイムは[極めて少ない](http://status.foresoft.net/1019628)。
 
@@ -15,7 +15,7 @@ Foresoft は、Trustwave Holdings 社から PCI コンプライアンス準拠�
 
 ![Secure Trust Validate](/static/secure-trust-validate.png)
 
-### データセンター
+## トップレベル Tier 3 データセンター利用
 
 PROdb システムが入っているシカゴにある Steadfast DC は、SAS70 / SSAE16 取得済で、米 HIPAA 監査を[合格してます](https://www.steadfast.net/healthcare)。
 
@@ -34,7 +34,7 @@ Steadfast 監査報告はこちら：
 -   [350 East Cermak Road](https://www.steadfast.net/managed-hosting/data-center-colocation/350-e-cermak-chicago-data-center)の DC になります
 -   Tier III DC で、電気、HVAC、ネットワーク接続、セキュリティの冗長性が 2N（必要なキャパの倍）
 
-### アプリケーションセキュリティについて：
+## アプリ セキュリティも抜群
 
 PROdb は 256-ビット (SHA2) TLS サーティフィケイト、TLS1.0、1.1 および 1.2 を介してワイヤー上でデータを暗号化します。データベースと添付ファイルは AES256 にて暗号化されます。
 

@@ -4,7 +4,7 @@ order: 900
 ---
 
 # システム アーキテクチャー
-
+＃＃ モダン且つセキュリティ重視しているシステム
 dbFLEX アーキテクチャーは次の通りとなります：
 
 ![図：システムアーキテクチャー](/static/figure-dbflex-system-architecture.png)
