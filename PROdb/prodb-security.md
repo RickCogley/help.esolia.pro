@@ -11,7 +11,7 @@ order: 950
 
 イソリアは Foresoft 社と、2010 年から 10 年以上、パートナーとして付き合ってます。しっかりしていて信頼のある会社で、サポートとプラットフォームは優れてます。ダウンタイムは[極めて少ない](http://status.foresoft.net/1019628)。
 
-Foresoft は、Trustwave Holdings 社から PCI コンプライアンス準拠してます。[こちら](https://sealserver.trustwave.com/cert.php?customerId=7901d29c0ca511e0b34b005056b201e5)でご確認頂けます。
+Foresoft は、Trustwave Holdings 社から PCI コンプライアンス準拠してます。[こちら](https://sealserver.trustwave.com/cert.php?customerId=7901d29c0ca511e0b34b005056b201e5&size=105x54&style=normal&language=jp)でご確認頂けます。
 
 ![Secure Trust Validate](/static/secure-trust-validate.png)
 
