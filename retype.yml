@@ -1,6 +1,9 @@
 input: .
 output: .retype
 url: https://help.esolia.pro
+favicon: static/favicon.ico
+meta:
+  title: " | help.esolia.pro - eSolia Detail and FAQ Pages"
 branding:
   title: イソリア
   label: ヘルプ
@@ -10,12 +13,27 @@ branding:
       text: "#ffffff"
       background: "#9C6700"
 links:
-- text: イソリアウェブサイト
+- text: 当社ウェブサイト
   link: https://esolia.co.jp
+  target: blank
+  icon: link-external
+  iconAlign: right
+- text: Company Site
+  link: https://esolia.com
+  target: blank
+  icon: link-external
+  iconAlign: right
 footer:
   copyright: "&copy; Copyright eSolia Inc. {{ year }}. All rights reserved."
+  links:
+  - text: システムステータス
+    link: https://status.esolia.pro/b3c3b1cc-5aaf-4190-9d71-d6b9c17523a5/
+    target: blank
+    icon: link-external
+    iconAlign: right  
 search:
   minChars: 2
+  maxResults: 15
   placeholder: 検索
   noResultsFoundMsg: 検索した文字列どこにもない
 edit:
