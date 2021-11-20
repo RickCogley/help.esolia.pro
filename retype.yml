@@ -1,0 +1,15 @@
+input: .
+output: .retype
+url: # Add your website address here
+branding:
+  title: イソリア
+  label: ヘルプ
+  logo: /static/eSolia_Square_Chicklet_Logo_YellowBlue.svg
+links:
+- text: イソリアウェブサイト
+  link: https://esolia.co.jp
+footer:
+  copyright: "&copy; Copyright eSolia Inc. {{ year }}. All rights reserved."
+search:
+  minChars: 3
+  noResultsFoundMsg: 検索した文字列どこにもない
