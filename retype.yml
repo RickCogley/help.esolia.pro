@@ -16,6 +16,7 @@ footer:
   copyright: "&copy; Copyright eSolia Inc. {{ year }}. All rights reserved."
 search:
   minChars: 2
+  placeholder: 検索
   noResultsFoundMsg: 検索した文字列どこにもない
 edit:
   repo: "https://github.com/esolia/help.esolia.pro/edit/"
