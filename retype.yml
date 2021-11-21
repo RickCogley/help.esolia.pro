@@ -10,8 +10,8 @@ branding:
   logo: /static/eSolia_Square_Chicklet_Logo_YellowBlue.svg
   colors:
     label:
-      text: "#ffffff"
-      background: "#9C6700"
+      text: "#004980"
+      background: "#5EB500"
 links:
 - text: 当社ウェブサイト
   link: https://esolia.co.jp

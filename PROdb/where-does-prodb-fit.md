@@ -1,5 +1,13 @@
 ---
+title: PROdbの位置づけ
+date: 2021-11-21T16:55
+description: PROdbのと言うイソリアのブランドの位置づけ
 order: 1000
+category: サービス詳細
+tags:
+  - PROdb
+  - dbFLEX
+  - プラットフォーム
 ---
 
 # PROdbの位置づけ

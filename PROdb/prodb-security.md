@@ -1,6 +1,12 @@
 ---
 title: PROdb セキュリティ
+date: 2021-11-21T16:55
+description: 信頼できるSaaSクラウド型データーベース「PROdb」を色んな面のセキュリティのご紹介です。
 order: 950
+category: サービス詳細
+tags:
+  - PROdb
+  - セキュリティ
 ---
 
 # PROdb セキュリティ
