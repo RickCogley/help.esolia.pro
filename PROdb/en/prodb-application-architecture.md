@@ -15,9 +15,9 @@ The dbFLEX application architecture is as follows:
 
 ![Figure: App Architecture](/static/figure-dbflex-system-architecture.png)
 
--   dbFLEX provides a logical view of the SQL database. 
--   While multiple customers may share a global SQL database (as is likely the case for most cloud SaaS and PaaS providers), the data is strictly isolated using a component called the "Data Access Layer" or "DAL" for short. The DAL is the only component that has direct access to the database. 
--   For example, when a user accesses a "View" (e.g. a data sheet, rolled up summary, or a chart): 
+* dbFLEX provides a logical view of the SQL database. 
+* While multiple customers may share a global SQL database (as is likely the case for most cloud SaaS and PaaS providers), the data is strictly isolated using a component called the "Data Access Layer" or "DAL" for short. The DAL is the only component that has direct access to the database. 
+* For example, when a user accesses a "View" (e.g. a data sheet, rolled up summary, or a chart): 
    1. The View is created under a Table, and is comprised of columns and filters. 
    2. The app page that will display the View passes the access request to the DAL. 
    3. The DAL examines the data definition (metadata), checking whether the table belongs to the database, and whether the current accessing user has enough access rights to view records from the table, and further, to individual columns. 
