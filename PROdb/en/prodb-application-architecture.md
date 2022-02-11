@@ -1,6 +1,6 @@
 ---
 title: Application Architecture
-date: 2022-02-11T09:55
+date: 2022-02-11T12:55
 description: Introducing PROdb's modern and secure application architecture
 order: 900
 category: Service Details
