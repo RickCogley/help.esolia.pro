@@ -1,29 +1,25 @@
 ---
-title: アプリ アーキテクチャー
+title: Application Architecture
 date: 2022-02-11T09:55
-description: PROdbの、モダン且つセキュリティ重視しているアプリケーションアーキテクチャーをご紹介します。
+description: Introducing PROdb's modern and secure application architecture
 order: 900
-category: サービス詳細
+category: Service Details
 tags:
   - PROdb
-  - 構成
-  - アーキテクチャー
+  - Architecture
 ---
 
-# アプリケーション アーキテクチャー
-## モダン且つセキュリティ重視しているアプリケーション
-dbFLEX アプリケーション アーキテクチャーは次の通りとなります：
+# Application Architecture
+## A modern application emphasizing security
+The dbFLEX application architecture is as follows: 
 
-![図： アプリ アーキテクチャー](/static/figure-dbflex-system-architecture.png)
+![Figure: App Architecture](/static/figure-dbflex-system-architecture.png)
 
--   dbFLEX は SQL データーベースの論理的ビューを提供してます。
--   一つの物理サーバーと SQL データーベースに、複数社のデータがありますが、データ･アクセス･レイヤー DAL と言う技術を使って、各論理 "データベースアプリケーション" で徹底的に別けてます。DAL しか直接 SQL テーブルにアクセス出来ません。
--   例えば、dbFLEX でユーザーが View（一覧や図など）を閲覧しようとする場合：
-
-    1.  View が Table の下に作られていて、表示する Column と検索条件で出来ている。
-    2.  閲覧依頼が来たら、View を表示するページが DAL に依頼を渡す。
-    3.  DAL が Database のメタデータを見て、この View が入っている Table がこの Database のメンバーかどうか、閲覧するユーバーが Table と View の権限あるかどうか、各 Column にも閲覧権限が十分かどうかを確認する。
-    4.  Column レベルで権限なければ、アクセスが完全拒否されるか、Column が隠されて表示する場合もある。
-    5.  全確認が OK な場合、DAL が閲覧出来るデータの SQL QUERY を作り、データを拾って依頼ユーザーに見せる。
-
-          
+-   dbFLEX provides a logical view of the SQL database. 
+-   While multiple customers may share a global SQL database (as is likely the case for most cloud SaaS and PaaS providers), the data is strictly isolated using a component called the "Data Access Layer" or "DAL" for short. The DAL is the only component that has direct access to the database. 
+-   For example, when a user accesses a "View" (e.g. a data sheet, rolled up summary, or a chart): 
+   1. The View is created under a Table, and is comprised of columns and filters. 
+   2. The app page that will display the View passes the access request to the DAL. 
+   3. The DAL examines the data definition (metadata), checking whether the table belongs to the database, and whether the current accessing user has enough access rights to view records from the table, and further, to individual columns. 
+   4. If any column is not accessible, the request is either rejected completely (i.e. in the case that the view's filter column happens to be inaccessible to the user) or the column is hidden from view (if it's in the list of columns to display). 
+   5. Once all verifications pass, the DAL builds and executes an SQL query to retrieve the data, and the results are passed back to the requestor.          
