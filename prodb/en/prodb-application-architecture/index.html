@@ -27,11 +27,11 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/static/favicon.ico" rel="icon" />
-    <link href="/resources/css/retype.css?v=1.11.2.697865762204" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.697868233635" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.697865762204" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.697868233635" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.697865762204" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.697868233635" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -233,8 +233,7 @@
 <ul>
 <li>dbFLEX provides a logical view of the SQL database.</li>
 <li>While multiple customers may share a global SQL database (as is likely the case for most cloud SaaS and PaaS providers), the data is strictly isolated using a component called the &quot;Data Access Layer&quot; or &quot;DAL&quot; for short. The DAL is the only component that has direct access to the database.</li>
-<li>For example, when a user accesses a &quot;View&quot; (e.g. a data sheet, rolled up summary, or a chart):</li>
-</ul>
+<li>For example, when a user accesses a &quot;View&quot; (e.g. a data sheet, rolled up summary, or a chart):
 <ol>
 <li>The View is created under a Table, and is comprised of columns and filters.</li>
 <li>The app page that will display the View passes the access request to the DAL.</li>
@@ -242,6 +241,8 @@
 <li>If any column is not accessible, the request is either rejected completely (i.e. in the case that the view&#x27;s filter column happens to be inaccessible to the user) or the column is hidden from view (if it&#x27;s in the list of columns to display).</li>
 <li>Once all verifications pass, the DAL builds and executes an SQL query to retrieve the data, and the results are passed back to the requestor.</li>
 </ol>
+</li>
+</ul>
 
 
 <div class="flex items-center mt-6 mb-6">
