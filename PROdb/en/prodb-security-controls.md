@@ -34,6 +34,10 @@ Each has different specific user impacts as follows.
 
 Both length and allowed characters policy changes will take effect _on the next account password expiration_.
 
+!!!success Note:
+The minimal password length can be customized to a longer length than the maximum in the UI, for example to 12 or 14 characters. Please ask!   
+!!!
+
 ## Password Expiration
 
 Password expiration timeout policy change will take effect immediately. PROdb tracks the date of the last password change. The password expiration fact is calculated dynamically by adding a number of days to last change timestamp, and comparing with the current date. Any change will have immediate effect.
