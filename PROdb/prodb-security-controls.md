@@ -12,7 +12,7 @@ tags:
 
 # PROdb セキュリティ制御
 
-PROdb エンタープライズサブスクリプションで、自社ドメインご利用であれば、「All Users」一覧から、Security Controlsボタンから設定を行って、セキュリティポリシーを変更できます。御社PROdbが <db.ourdomain.com> だとすると次のようなURLになります：
+PROdb エンタープライズサブスクリプションで、自社ドメインご利用であれば、「All Users」一覧から、Security Controlsボタンから設定を行って、セキュリティポリシーを変更できます。御社PROdbが db.ourdomain.com でホスティングしているなら次のようなURLになります：
 
 https://db.ourdomain.com/secure/accusers.aspx  
 https://db.ourdomain.com/secure/accsecurity.aspx
