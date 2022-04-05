@@ -27,11 +27,11 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/static/favicon.ico" rel="icon" />
-    <link href="/resources/css/retype.css?v=1.11.2.702441728109" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.702441870431" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.702441728109" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.702441870431" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.702441728109" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.702441870431" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -219,7 +219,7 @@
 </div>
 
 <p>PROｄｂエンタープライズサブスクリプションで、自社ドメインご利用であれば、「All Users」一覧から、Security Controlsボタンから設定を行って、セキュリティポリシーを変更できます。御社PROdbが &lt;db.ourdomain.com&gt; だとすると次のようなURLになります：</p>
-<p><a href="https://db.ourdomain.com/secure/accusers.aspx">https://db.ourdomain.com/secure/accusers.aspx</a>
+<p><a href="https://db.ourdomain.com/secure/accusers.aspx">https://db.ourdomain.com/secure/accusers.aspx</a><br />
 <a href="https://db.ourdomain.com/secure/accsecurity.aspx">https://db.ourdomain.com/secure/accsecurity.aspx</a></p>
 <p>変更できるポリシーは次のとおりです。</p>
 <ol>
@@ -284,17 +284,6 @@
         <span>セッションタイムアウト Session Timeout</span>
     </h2>
 </doc-anchor-target>
-<p>Changes to session timeout policy is a bit tricky. When a PROdb user signs in, an authorization &quot;ticket&quot; is created. Most of the ticket storage logic is handled by the Microsoft .NET framework that PROdb relies on, and PROdb simply checks if the user&#x27;s login is still valid, or redirects to the login page automatically.</p>
-<p>The login ticket holds all the information necessary for security operations (issue date, timeout, expiration), so, any changes in policy settings are <em>not</em> reflected in the ticket, unless it expires and is recreated, or, the user logs out and back in.</p>
-<p>Any value for the &quot;Session Timeout&quot; policy other than &quot;Never&quot;, leads to a &quot;session cookie&quot; being created and stored in the user&#x27;s browser, (and also hides the &quot;keep me logged in&quot; option checkbox). This &quot;session cookie&quot; will expire:</p>
-<ul>
-<li>when specified by the policy (e.g. 8 hours, the maximum)</li>
-<li>when the user closes the last browser window or tab with PROdb open</li>
-<li>when the user restarts their computer</li>
-</ul>
-<p>There is therefore a high likelihood that with the max 8 hours set, the user will need to re-login once per day.</p>
-<p>The challenge is, when the &quot;Session Timeout&quot; is set to &quot;Never&quot; <em>and</em> the user selects &quot;keep me logged in&quot;. In this case, the cookie is issued for one year, and the only way to get rid of it before the one year expiration, is to sign out.</p>
-<p>Therefore, when changing policy from &quot;Never&quot; to some setting such as &quot;8 hours&quot;, the best practice is to have users sign out so that the session cookie is re-created properly.</p>
 <p>セッションタイムアウトは少し複雑です。PROdbユーザがサインインする時、サインインを認証する「チケット」が作成されます。サインインを認証する「チケット」のストレージロジックのほとんどは、PROdbが利用するMicrosoft .NETフレームワークによって処理されるので、PROdbはユーザーのサインインが有効かを確認して、必要に応じてサインインページに自動的にリダイレクトします。</p>
 <p>サインイン「チケット」には、セキュリティ関連操作に必要なすべての情報 （発行日、タイムアウト、有効期限） が保持されているため、ポリシー設定の変更は、有効期限が切れて再作成されるか、ユーザーがログアウトして再作成されない限り、チケットに反映されません。</p>
 <p>「セッションタイムアウト」ポリシーの値を「Never / しない」以外に指定すると、「セッション cookie」が作成され、（そして、「Keep Me Logged In / サインインしたままにする」オプションのチェックボックスは非表示) この「セッションcookie」は次のように期限切れになります：</p>
