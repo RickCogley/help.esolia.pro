@@ -40,6 +40,9 @@ Steadfast 監査報告はこちら：
 -   [350 East Cermak Road](https://www.steadfast.net/managed-hosting/data-center-colocation/350-e-cermak-chicago-data-center)の DC になります
 -   Tier III DC で、電気、HVAC、ネットワーク接続、セキュリティの冗長性が 2N（必要なキャパの倍）
 
+!!!success 有料オプション
+有料「プライベートクラウド」オプションもございます。Azureに御社のPROdbを乗せて、仮想デバイスログやその他の情報が閲覧可能になります。 
+!!!
 ## アプリ セキュリティも抜群
 
 PROdb は 256-ビット (SHA2) TLS サーティフィケイト、TLS1.0、1.1 および 1.2 を介してワイヤー上でデータを暗号化します。データベースと添付ファイルは AES256 にて暗号化されます。

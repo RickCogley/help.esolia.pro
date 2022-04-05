@@ -30,8 +30,8 @@ The Top Level Tier-3 datacenter housing PROdb is operated by Steadfast Networks,
 
 In the event that clients would rather not be hosted in the USA, Foresoft also offers their platform in Microsoft Azure's West EU datacenter in the Netherlands. Whereas the Steadfast DC is co-location of physical servers, Azure is a cloud offering which meaning it is database hosting, data and file storage, on virtual servers. See Microsoft's pages regarding [Security](https://azure.microsoft.com/en-us/overview/security/) and [Compliance Certifications](https://azure.microsoft.com/en-us/overview/trusted-cloud/compliance/). 
 
-!!!warning
-**Please note** however, similarly to other PaaS / SaaS operators, there is no "private cloud" option. 
+!!!success Option
+A fee-based private cloud option is available on Azure, giving you access to virtual device logs and other information. 
 !!!
 
 ## Rock Solid Application Security
