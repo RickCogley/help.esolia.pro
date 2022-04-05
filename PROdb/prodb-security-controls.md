@@ -14,7 +14,7 @@ tags:
 
 PROｄｂエンタープライズサブスクリプションで、自社ドメインご利用であれば、「All Users」一覧から、Security Controlsボタンから設定を行って、セキュリティポリシーを変更できます。御社PROdbが <db.ourdomain.com> だとすると次のようなURLになります：
 
-https://db.ourdomain.com/secure/accusers.aspx
+https://db.ourdomain.com/secure/accusers.aspx  
 https://db.ourdomain.com/secure/accsecurity.aspx
 
 変更できるポリシーは次のとおりです。
@@ -49,22 +49,6 @@ https://db.ourdomain.com/secure/accsecurity.aspx
 !!!
 
 ## セッションタイムアウト Session Timeout
-
-Changes to session timeout policy is a bit tricky. When a PROdb user signs in, an authorization "ticket" is created. Most of the ticket storage logic is handled by the Microsoft .NET framework that PROdb relies on, and PROdb simply checks if the user's login is still valid, or redirects to the login page automatically.
-
-The login ticket holds all the information necessary for security operations (issue date, timeout, expiration), so, any changes in policy settings are _not_ reflected in the ticket, unless it expires and is recreated, or, the user logs out and back in.
-
-Any value for the "Session Timeout" policy other than "Never", leads to a "session cookie" being created and stored in the user's browser, (and also hides the "keep me logged in" option checkbox). This "session cookie" will expire:
-
-* when specified by the policy (e.g. 8 hours, the maximum)
-* when the user closes the last browser window or tab with PROdb open
-* when the user restarts their computer
-
-There is therefore a high likelihood that with the max 8 hours set, the user will need to re-login once per day.
-
-The challenge is, when the "Session Timeout" is set to "Never" _and_ the user selects "keep me logged in". In this case, the cookie is issued for one year, and the only way to get rid of it before the one year expiration, is to sign out.
-
-Therefore, when changing policy from "Never" to some setting such as "8 hours", the best practice is to have users sign out so that the session cookie is re-created properly. 
 
 セッションタイムアウトは少し複雑です。PROdbユーザがサインインする時、サインインを認証する「チケット」が作成されます。サインインを認証する「チケット」のストレージロジックのほとんどは、PROdbが利用するMicrosoft .NETフレームワークによって処理されるので、PROdbはユーザーのサインインが有効かを確認して、必要に応じてサインインページに自動的にリダイレクトします。
 
