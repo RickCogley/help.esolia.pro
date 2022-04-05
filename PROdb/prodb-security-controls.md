@@ -2,7 +2,7 @@
 title: PROdb セキュリティ制御変更について
 date: 2022-04-05T09:55
 description: パスワード、タイムアウト、セッション期限など規定設定
-order: 1000
+order: 850
 category: サービス詳細
 tags:
   - PROdb
