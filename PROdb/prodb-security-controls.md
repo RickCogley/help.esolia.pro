@@ -1,0 +1,88 @@
+---
+title: PROdb セキュリティ制御変更について
+date: 2022-04-05T09:55
+description: パスワード、タイムアウト、セッション期限など規定設定
+order: 1000
+category: サービス詳細
+tags:
+  - PROdb
+  - パスワード
+  - 規定
+---
+
+# PROdb セキュリティ制御
+
+PROｄｂエンタープライズサブスクリプションで、自社ドメインご利用であれば、「All Users」一覧から、Security Controlsボタンから設定を行って、セキュリティポリシーを変更できます。御社PROdbが <db.ourdomain.com> だとすると次のようなURLになります：
+
+https://db.ourdomain.com/secure/accusers.aspx
+https://db.ourdomain.com/secure/accsecurity.aspx
+
+変更できるポリシーは次のとおりです。
+
+1. パスワード複雑さ:
+   * 最小の文字数
+   * 許可される文字
+2. パスワードの有効期限
+3. サインインが失敗したら
+   * ブロックしない　もしくは
+   * 〜回失敗したらブロック
+4. セッションタイムアウト
+
+それぞれが次のように異なる特定のユーザーへの影響を持っています。
+
+## パスワードの複雑さ Password Complexity
+
+長さと許可される文字の両方の変更は、次のアカウントパスワードの有効期限で有効になります。
+
+## パスワードの有効期限 Password Expiration
+
+パスワードの有効期限はタイムアウト後即座に使用できなくなります。PROdbは、最後にパスワードが変更された日付を追跡します。パスワードの有効期限は、最後に変更された日付に日数を追加して、現在の数字と比較することにより計算されます。
+
+具体的には、PROdbは、ユーザーのブラウザによって保存される認証Cookieにスライド式の有効期限ウィンドウを使用します。 パスワードの有効期限を0日から90日に設定した場合、たとえば、ユーザーが有効期限まで45日（期間の半分）を超えてシステムにサインインした時、システムは何もしません。 45日以下の場合、システムは有効期限をさらに90日間延長します。
+
+## サインイン失敗 Failed Logins
+
+サインイン失敗カウンター ポリシーの変更は、次にサインイン失敗した時に有効になります。 連続して失敗したサインインの数がカウントされ、その数が最大に達すると、アカウントがロックされます。 サインインまたはパスワードのリセットが成功すると、カウンターがクリアされます。
+
+!!!success 注意:
+管理者は、All Users一覧からロックされたユーザーアカウントのロックを解除できます。  
+!!!
+
+## セッションタイムアウト Session Timeout
+
+Changes to session timeout policy is a bit tricky. When a PROdb user signs in, an authorization "ticket" is created. Most of the ticket storage logic is handled by the Microsoft .NET framework that PROdb relies on, and PROdb simply checks if the user's login is still valid, or redirects to the login page automatically.
+
+The login ticket holds all the information necessary for security operations (issue date, timeout, expiration), so, any changes in policy settings are _not_ reflected in the ticket, unless it expires and is recreated, or, the user logs out and back in.
+
+Any value for the "Session Timeout" policy other than "Never", leads to a "session cookie" being created and stored in the user's browser, (and also hides the "keep me logged in" option checkbox). This "session cookie" will expire:
+
+* when specified by the policy (e.g. 8 hours, the maximum)
+* when the user closes the last browser window or tab with PROdb open
+* when the user restarts their computer
+
+There is therefore a high likelihood that with the max 8 hours set, the user will need to re-login once per day.
+
+The challenge is, when the "Session Timeout" is set to "Never" _and_ the user selects "keep me logged in". In this case, the cookie is issued for one year, and the only way to get rid of it before the one year expiration, is to sign out.
+
+Therefore, when changing policy from "Never" to some setting such as "8 hours", the best practice is to have users sign out so that the session cookie is re-created properly. 
+
+セッションタイムアウトは少し複雑です。PROdbユーザがサインインする時、サインインを認証する「チケット」が作成されます。サインインを認証する「チケット」のストレージロジックのほとんどは、PROdbが利用するMicrosoft .NETフレームワークによって処理されるので、PROdbはユーザーのサインインが有効かを確認して、必要に応じてサインインページに自動的にリダイレクトします。
+
+サインイン「チケット」には、セキュリティ関連操作に必要なすべての情報 （発行日、タイムアウト、有効期限） が保持されているため、ポリシー設定の変更は、有効期限が切れて再作成されるか、ユーザーがログアウトして再作成されない限り、チケットに反映されません。
+
+「セッションタイムアウト」ポリシーの値を「Never / しない」以外に指定すると、「セッション cookie」が作成され、（そして、「Keep Me Logged In / サインインしたままにする」オプションのチェックボックスは非表示) この「セッションcookie」は次のように期限切れになります：
+
+* ポリシーで指定されている場合 （例：最大値の8時間）
+* ユーザーがPROdbを開いた状態で最後のブラウザウィンドウまたはタブを閉じたとき
+* ユーザーがコンピューターを再起動したとき
+
+なので、最大8時間を設定すると、ユーザーは大まか1日に1回再サインインする必要になると言えます。
+課題は、「セッションタイムアウト」が「しない」に設定されていて、ユーザーが「サインインしたままにする」を選択した場合です。 この場合、Cookieは1年間発行され、1年の有効期限が切れる前にCookieを削除する唯一の方法は、サインアウトすることです。
+
+したがって、ポリシーを「しない」から「8時間」などの設定に変更する場合は、セッションCookieが正しく再作成されるように、ベストプラクティスとして、ユーザーにサインアウトさせる必要があります。
+
+!!!warning 大切:
+システム側では強制的にセッションCookieを再作成させることができません。  
+!!!
+
+![図: PROdb Security Controls 画面](/static/figure-prodb-security-controls-screen.png)
