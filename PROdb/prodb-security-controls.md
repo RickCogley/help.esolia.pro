@@ -66,7 +66,7 @@ https://db.ourdomain.com/secure/accsecurity.aspx
 したがって、ポリシーを「しない」から「8時間」などの設定に変更する場合は、セッションCookieが正しく再作成されるように、ベストプラクティスとして、ユーザーにサインアウトさせる必要があります。
 
 !!!warning 重要:
-システム側では強制的にセッションCookieを再作成させることができません。  
+システム側では強制的にセッションCookieを再作成させることができません。変更後、ユーザーにサインアウトさせる必要がある。
 !!!
 
 ![図: PROdb Security Controls 画面](/static/figure-prodb-security-controls-screen.png)

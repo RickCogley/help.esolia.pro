@@ -67,7 +67,7 @@ The challenge is, when the "Session Timeout" is set to "Never" _and_ the user se
 Therefore, when changing policy from "Never" to some setting such as "8 hours", the best practice is to have users sign out so that the session cookie is re-created properly. 
 
 !!!warning Important:
-Session cookie recreation _cannot_ be automatically performed from the system side.  
+Session cookie recreation _cannot_ be automatically performed from the system side. Have users sign out and back in when changing this policy.  
 !!!
 
 ![Figure: PROdb Security Controls Screen](/static/figure-prodb-security-controls-screen.png)
