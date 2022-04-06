@@ -27,11 +27,11 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/static/favicon.ico" rel="icon" />
-    <link href="/resources/css/retype.css?v=1.11.2.702449886442" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.702523284333" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.702449886442" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.702523284333" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.702449886442" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.702523284333" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -215,7 +215,7 @@
         <a href="/categories/service-details/">Service Details</a>
     </div>
     <div class="mx-2 flex items-center">&#9679;</div>
-    <div class="flex items-center flex-shrink-0">Published&nbsp;<span>2022-04-05</span></div>
+    <div class="flex items-center flex-shrink-0">Published&nbsp;<span>2022-04-06</span></div>
 </div>
 
 <p>For PROdb enterprise subscribers who are using their own domain, it is possible for us to make security policy settings from &quot;All Users&quot;, clicking the &quot;Security Controls&quot; button. For example, if your PROdb is hosted on db.ourdomain.com, the URLs for these functions would be:</p>
@@ -259,7 +259,7 @@
         </div>
         <div class="pr-5 ml-3">
             <h5>Note:</h5>
-<p>The minimal password length can be customized to a longer length than the maximum in the UI, for example to 12 or 14 characters. Please ask!</p>
+<p>The minimal password length can be customized to a longer length than the maximum in the UI, for example to 12 or 14 characters. Enterprise subscribers should ask us if they would like to customize this.</p>
         </div>
     </div>
 </div>
@@ -269,8 +269,25 @@
         <span>Password Expiration</span>
     </h2>
 </doc-anchor-target>
-<p>Password expiration timeout policy change will take effect immediately. PROdb tracks the date of the last password change. The password expiration fact is calculated dynamically by adding a number of days to last change timestamp, and comparing with the current date. Any change will have immediate effect.</p>
-<p>Specifically, PROdb uses a sliding expiration window for the authorization cookie that is saved by the user&#x27;s browser. If we set the password expiration from nothing, to 90 days for example, if the user signs into the system with more than 45 days (half the period) until the expiration date, the system does nothing. Otherwise, the system will extend the expiration date for another 90 days.</p>
+<p>Any password expiration timeout policy change will take effect immediately. PROdb tracks the date of the last password change. Password expiration is calculated dynamically by adding the policy&#x27;s number of days to the last change timestamp, and comparing with the current date.</p>
+<p>The user will be prompted to change if today&#x27;s date is past the calculated expiration date.</p>
+<div class="flex mb-6">
+    <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-green-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-green-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M21 9.09c-.55 0-1 .45-1 1v.92c0 4.96-4.04 8.99-9 8.99-4.97 0-9-4.04-9-9s4.04-9 9-9c1.27 0 2.5.26 3.66.78.51.22 1.1 0 1.32-.51.23-.5 0-1.1-.51-1.32C14.06.32 12.56 0 11.01 0H11C4.94 0 0 4.93 0 10.99 0 17.06 4.93 22 10.99 22H11c6.06 0 11-4.93 11-10.99v-.92c0-.56-.45-1-1-1z"></path>
+                    <path d="M8.71 9.31a.996.996 0 10-1.41 1.41l3 3c.19.19.44.29.71.29.27 0 .52-.11.71-.29l10-10.01a.996.996 0 10-1.41-1.41L11 11.6 8.71 9.31z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3">
+            <h5>Note:</h5>
+<p>A password change can be forced by finding the user in the <em>All Users</em> list, and setting the &quot;Must Change Password&quot; flag in that user&#x27;s settings.</p>
+        </div>
+    </div>
+</div>
 <doc-anchor-target id="failed-sign-ins">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#failed-sign-ins">#</doc-anchor-trigger>
@@ -301,7 +318,7 @@
         <span>Session Timeout</span>
     </h2>
 </doc-anchor-target>
-<p>Changes to session timeout policy is a bit tricky. When a PROdb user signs in, an authorization &quot;ticket&quot; is created. Most of the ticket storage logic is handled by the Microsoft .NET framework that PROdb relies on, and PROdb simply checks if the user&#x27;s sign-in is still valid, or redirects to the sign-in page automatically.</p>
+<p>Changes to session timeout policy are tricky. When a PROdb user signs in, an authorization &quot;ticket&quot; is created. Most of the ticket storage logic is handled by the Microsoft .NET framework that PROdb relies on, and PROdb simply checks if the user&#x27;s sign-in is still valid, or redirects to the sign-in page automatically.</p>
 <p>The sign-in ticket holds all the information necessary for security operations (issue date, timeout, expiration), so, any changes in policy settings are <em>not</em> reflected in the ticket, unless it expires and is recreated, or, the user logs out and back in.</p>
 <p>Any value for the &quot;Session Timeout&quot; policy other than &quot;Never&quot;, leads to a &quot;session cookie&quot; being created and stored in the user&#x27;s browser, (and also hides the &quot;keep me logged in&quot; option checkbox). This &quot;session cookie&quot; will expire:</p>
 <ul>
@@ -309,7 +326,7 @@
 <li>when the user closes the last browser window or tab with PROdb open</li>
 <li>when the user restarts their computer</li>
 </ul>
-<p>There is therefore a high likelihood that with the max 8 hours set, the user will need to re-sign-in once per day.</p>
+<p>Session timeout is &quot;sliding&quot;, meaning the timeout is triggered when there is no activity for the timeout period. If a signed-in user navigates during their PROdb session, this action resets the timer. Due to normal sleep cycles, however, there is a high likelihood that with the max 8 hours set, the user will need to re-sign-in once per day.</p>
 <p>The challenge is, when the &quot;Session Timeout&quot; is set to &quot;Never&quot; <em>and</em> the user selects &quot;keep me logged in&quot;. In this case, the cookie is issued for one year, and the only way to get rid of it before the one year expiration, is to sign out.</p>
 <p>Therefore, when changing policy from &quot;Never&quot; to some setting such as &quot;8 hours&quot;, the best practice is to have users sign out so that the session cookie is re-created properly.</p>
 <div class="flex mb-6">

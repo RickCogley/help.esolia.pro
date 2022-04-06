@@ -27,11 +27,11 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/static/favicon.ico" rel="icon" />
-    <link href="/resources/css/retype.css?v=1.11.2.702449886442" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.702523284333" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.702449886442" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.702523284333" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.702449886442" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.702523284333" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -215,7 +215,7 @@
         <a href="/categories/%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E8%A9%B3%E7%B4%B0/">サービス詳細</a>
     </div>
     <div class="mx-2 flex items-center">&#9679;</div>
-    <div class="flex items-center flex-shrink-0">Published&nbsp;<span>2022-04-05</span></div>
+    <div class="flex items-center flex-shrink-0">Published&nbsp;<span>2022-04-06</span></div>
 </div>
 
 <p>PROdb エンタープライズサブスクリプションで、自社ドメインご利用であれば、「All Users」一覧から、Security Controlsボタンから設定を行って、セキュリティポリシーを変更できます。御社PROdbが db.ourdomain.com でホスティングしているなら次のようなURLになります：</p>
@@ -270,7 +270,6 @@
     </h2>
 </doc-anchor-target>
 <p>パスワードの有効期限はタイムアウト後即座に使用できなくなります。PROdbは、最後にパスワードが変更された日付を追跡します。パスワードの有効期限は、最後に変更された日付に日数を追加して、現在の数字と比較することにより計算されます。</p>
-<p>具体的には、PROdbは、ユーザーのブラウザによって保存される認証Cookieにスライド式の有効期限ウィンドウを使用します。 パスワードの有効期限を0日から90日に設定した場合、たとえば、ユーザーが有効期限まで45日（期間の半分）を超えてシステムにサインインした時、システムは何もしません。 45日以下の場合、システムは有効期限をさらに90日間延長します。</p>
 <doc-anchor-target id="サインイン失敗-failed-logins">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#サインイン失敗-failed-logins">#</doc-anchor-trigger>
