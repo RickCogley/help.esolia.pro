@@ -27,11 +27,11 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/static/favicon.ico" rel="icon" />
-    <link href="/resources/css/retype.css?v=1.11.2.702523284333" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.702525551014" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.702523284333" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.702525551014" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.702523284333" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.702525551014" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -270,7 +270,7 @@
     </h2>
 </doc-anchor-target>
 <p>Any password expiration timeout policy change will take effect immediately. PROdb tracks the date of the last password change. Password expiration is calculated dynamically by adding the policy&#x27;s number of days to the last change timestamp, and comparing with the current date.</p>
-<p>The user will be prompted to change if today&#x27;s date is past the calculated expiration date.</p>
+<p>The user will be prompted to change their password, if today&#x27;s date is past the calculated expiration date.</p>
 <div class="flex mb-6">
     <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-green-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -284,7 +284,7 @@
         </div>
         <div class="pr-5 ml-3">
             <h5>Note:</h5>
-<p>A password change can be forced by finding the user in the <em>All Users</em> list, and setting the &quot;Must Change Password&quot; flag in that user&#x27;s settings.</p>
+<p>A password change can be forced by finding the user in the <em>All Users</em> list, and setting the &quot;Must Change Password&quot; flag in that user&#x27;s settings. PROdb will request the password change on next sign-in.</p>
         </div>
     </div>
 </div>
@@ -326,7 +326,7 @@
 <li>when the user closes the last browser window or tab with PROdb open</li>
 <li>when the user restarts their computer</li>
 </ul>
-<p>Session timeout is &quot;sliding&quot;, meaning the timeout is triggered when there is no activity for the timeout period. If a signed-in user navigates during their PROdb session, this action resets the timer. Due to normal sleep cycles, however, there is a high likelihood that with the max 8 hours set, the user will need to re-sign-in once per day.</p>
+<p>Session timeout is &quot;sliding&quot;, meaning the timeout is triggered when there is no activity for the timeout period. If a signed-in user navigates during their PROdb session, this action resets the timer. Due to normal human sleep cycles, however, there is a high likelihood that with the max 8 hours set, the user will need to re-sign-in once per day.</p>
 <p>The challenge is, when the &quot;Session Timeout&quot; is set to &quot;Never&quot; <em>and</em> the user selects &quot;keep me logged in&quot;. In this case, the cookie is issued for one year, and the only way to get rid of it before the one year expiration, is to sign out.</p>
 <p>Therefore, when changing policy from &quot;Never&quot; to some setting such as &quot;8 hours&quot;, the best practice is to have users sign out so that the session cookie is re-created properly.</p>
 <div class="flex mb-6">

@@ -27,11 +27,11 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/static/favicon.ico" rel="icon" />
-    <link href="/resources/css/retype.css?v=1.11.2.702523284333" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.702525551014" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.702523284333" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.702525551014" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.702523284333" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.702525551014" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -270,10 +270,28 @@
     </h2>
 </doc-anchor-target>
 <p>パスワードの有効期限はタイムアウト後即座に使用できなくなります。PROdbは、最後にパスワードが変更された日付を追跡します。パスワードの有効期限は、最後に変更された日付に日数を追加して、現在の数字と比較することにより計算されます。</p>
-<doc-anchor-target id="サインイン失敗-failed-logins">
+<p>今日の日付は、計算された日付より後だったら、PROdbがパスワード変更を要求します。</p>
+<div class="flex mb-6">
+    <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-green-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-green-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M21 9.09c-.55 0-1 .45-1 1v.92c0 4.96-4.04 8.99-9 8.99-4.97 0-9-4.04-9-9s4.04-9 9-9c1.27 0 2.5.26 3.66.78.51.22 1.1 0 1.32-.51.23-.5 0-1.1-.51-1.32C14.06.32 12.56 0 11.01 0H11C4.94 0 0 4.93 0 10.99 0 17.06 4.93 22 10.99 22H11c6.06 0 11-4.93 11-10.99v-.92c0-.56-.45-1-1-1z"></path>
+                    <path d="M8.71 9.31a.996.996 0 10-1.41 1.41l3 3c.19.19.44.29.71.29.27 0 .52-.11.71-.29l10-10.01a.996.996 0 10-1.41-1.41L11 11.6 8.71 9.31z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3">
+            <h5>注意:</h5>
+<p>All Users一覧から、ユーザーを検索して &quot;Must Change Password&quot; フラグにチェックを入れて保存したら、次のサインイン時にPROdbはパスワード変更を要求します。</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="サインイン失敗-failed-sign-ins">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#サインイン失敗-failed-logins">#</doc-anchor-trigger>
-        <span>サインイン失敗 Failed Logins</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#サインイン失敗-failed-sign-ins">#</doc-anchor-trigger>
+        <span>サインイン失敗 Failed Sign-ins</span>
     </h2>
 </doc-anchor-target>
 <p>サインイン失敗カウンター ポリシーの変更は、次にサインイン失敗した時に有効になります。 連続して失敗したサインインの数がカウントされ、その数が最大に達すると、アカウントがロックされます。 サインインまたはパスワードのリセットが成功すると、カウンターがクリアされます。</p>
@@ -308,8 +326,8 @@
 <li>ユーザーがPROdbを開いた状態で最後のブラウザウィンドウまたはタブを閉じたとき</li>
 <li>ユーザーがコンピューターを再起動したとき</li>
 </ul>
-<p>なので、最大8時間を設定すると、ユーザーは大まか1日に1回再サインインする必要になると言えます。
-課題は、「セッションタイムアウト」が「しない」に設定されていて、ユーザーが「サインインしたままにする」を選択した場合です。 この場合、Cookieは1年間発行され、1年の有効期限が切れる前にCookieを削除する唯一の方法は、サインアウトすることです。</p>
+<p>PROdbの「セッションタイムアウト」は「スライディング」で、ユーザーがアプリでナビゲーションしない限り、タイムアウトになってしまいます。逆にサインインされたユーザーがナビゲーションすると、タイムアウトタイマーがリセットされます。人間の睡眠を考慮し、最大8時間に設定すると、ユーザーは大まか1日に1回再サインインする必要になると言えます。</p>
+<p>課題は、「セッションタイムアウト」が「しない」に設定されていて、ユーザーが「サインインしたままにする」を選択した場合です。 この場合、Cookieは1年間発行され、1年の有効期限が切れる前にCookieを削除する唯一の方法は、サインアウトすることです。</p>
 <p>したがって、ポリシーを「しない」から「8時間」などの設定に変更する場合は、セッションCookieが正しく再作成されるように、ベストプラクティスとして、ユーザーにサインアウトさせる必要があります。</p>
 <div class="flex mb-6">
     <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
