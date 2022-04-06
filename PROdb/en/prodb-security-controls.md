@@ -42,10 +42,10 @@ The minimal password length can be customized to a longer length than the maximu
 
 Any password expiration timeout policy change will take effect immediately. PROdb tracks the date of the last password change. Password expiration is calculated dynamically by adding the policy's number of days to the last change timestamp, and comparing with the current date. 
 
-The user will be prompted to change if today's date is past the calculated expiration date.
+The user will be prompted to change their password, if today's date is past the calculated expiration date.
 
 !!!success Note:
-A password change can be forced by finding the user in the _All Users_ list, and setting the "Must Change Password" flag in that user's settings.  
+A password change can be forced by finding the user in the _All Users_ list, and setting the "Must Change Password" flag in that user's settings. PROdb will request the password change on next sign-in.  
 !!!
 
 ## Failed sign-ins
@@ -68,7 +68,7 @@ Any value for the "Session Timeout" policy other than "Never", leads to a "sessi
 * when the user closes the last browser window or tab with PROdb open
 * when the user restarts their computer
 
-Session timeout is "sliding", meaning the timeout is triggered when there is no activity for the timeout period. If a signed-in user navigates during their PROdb session, this action resets the timer. Due to normal sleep cycles, however, there is a high likelihood that with the max 8 hours set, the user will need to re-sign-in once per day.  
+Session timeout is "sliding", meaning the timeout is triggered when there is no activity for the timeout period. If a signed-in user navigates during their PROdb session, this action resets the timer. Due to normal human sleep cycles, however, there is a high likelihood that with the max 8 hours set, the user will need to re-sign-in once per day.  
 
 The challenge is, when the "Session Timeout" is set to "Never" _and_ the user selects "keep me logged in". In this case, the cookie is issued for one year, and the only way to get rid of it before the one year expiration, is to sign out.
 
