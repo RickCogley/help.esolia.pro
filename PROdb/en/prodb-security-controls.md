@@ -12,10 +12,10 @@ tags:
 
 # PROdb Security Controls
 
-For PROdb enterprise subscribers who are using their own domain, it is possible for us to make security policy settings from "All Users", clicking the "Security Controls" button. For example, if your PROdb is hosted on db.ourdomain.com, the URLs for these functions would be: 
+For PROdb enterprise subscribers who are using their own domain, it is possible for us to make security policy settings from "All Users", clicking the "Security Controls" button. For example, if your PROdb is hosted on `db.ourdomain.com`, the URLs for these functions would be: 
 
-https://db.ourdomain.com/secure/accusers.aspx  
-https://db.ourdomain.com/secure/accsecurity.aspx
+`https://db.ourdomain.com/secure/accusers.aspx`  
+`https://db.ourdomain.com/secure/accsecurity.aspx`
 
 These are the policies that can be set:
 
