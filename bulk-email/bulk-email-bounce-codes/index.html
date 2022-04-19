@@ -25,11 +25,11 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/static/favicon.ico" rel="icon" />
-    <link href="/resources/css/retype.css?v=1.11.2.703661208137" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.703662036353" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.703661208137" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.703662036353" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.703661208137" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.703662036353" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -236,22 +236,22 @@
 <tr>
 <td>HardBounce</td>
 <td>1</td>
-<td>ハードバウンス — サーバーは送信したメールを届けることが出来ませんでした。 (例: ユーザーが無い、メールボックスが無い).</td>
+<td>ハードバウンス — サーバーは送信したメールを届けることが出来なかった。 (例: ユーザーが無い、メールボックスが無い).</td>
 </tr>
 <tr>
 <td>Transient</td>
 <td>2</td>
-<td>送信遅れ — The server could not temporarily deliver your message (例: Message is delayed due to network troubles).</td>
+<td>送信遅れ — 一時的に送信したメールを届けることが出来なかった。  (例: ネットワークトラブルによる問題).</td>
 </tr>
 <tr>
 <td>Unsubscribe</td>
 <td>16</td>
-<td>送信停止依頼 — Unsubscribe or Remove request.</td>
+<td>送信停止依頼 — 送信先ユーザーから送信停止依頼を受けた。</td>
 </tr>
 <tr>
 <td>Subscribe</td>
 <td>32</td>
-<td>サブスク依頼 — Subscribe request from someone wanting to get added to the mailing list.</td>
+<td>サブスク依頼 — 送信一覧にサブスクしたい、ユーザーからの依頼。</td>
 </tr>
 <tr>
 <td>AutoResponder</td>
@@ -261,7 +261,7 @@
 <tr>
 <td>AddressChange</td>
 <td>128</td>
-<td>アドレス変更依頼 — The recipient has requested an address change.</td>
+<td>アドレス変更依頼 — 受信者によるアドレス変更依頼を受けた。</td>
 </tr>
 <tr>
 <td>DnsError</td>
@@ -276,7 +276,7 @@
 <tr>
 <td>OpenRelayTest</td>
 <td>1024</td>
-<td>オープンリレー調査 — The NDR is actually a test email message to see if the mail server is an open relay.</td>
+<td>オープンリレー調査 — 本NDR （Non-Delivery Report 配信不能レポート） はオープンリレーかどうかの確認調査。</td>
 </tr>
 <tr>
 <td>Unknown</td>
@@ -286,7 +286,7 @@
 <tr>
 <td>SoftBounce</td>
 <td>4096</td>
-<td>ソフトバウンス — 一時的に送信したメールを届けることが出来ませんでした。 (例: メールボックスがいっぱい、アカウントが無効になっている、保存クォータをオーバしている、ハードディスク保存領域がもう無い).</td>
+<td>ソフトバウンス — 一時的に送信したメールを届けることが出来なかった。 (例: メールボックスがいっぱい、アカウントが無効になっている、保存クォータをオーバしている、ハードディスク保存領域がもう無い).</td>
 </tr>
 <tr>
 <td>VirusNotification</td>
@@ -296,7 +296,7 @@
 <tr>
 <td>ChallengeVerification</td>
 <td>16384</td>
-<td>スパム確認 — The bounce is a challenge asking for verification you actually sent the email. Typcial challenges are made by Spam Arrest, or MailFrontier Matador.</td>
+<td>スパム確認 — スパムソフト （例： Spam Arrest, MailFrontier Matadorなど） が送ってくる「身分確認」チャレンジ。</td>
 </tr>
 <tr>
 <td>BadEmailAddress</td>
@@ -311,12 +311,12 @@
 <tr>
 <td>ManuallyDeactivated</td>
 <td>100002</td>
-<td>手動無効化 — The email was manually deactivated.</td>
+<td>手動無効化 — 送信先メールは手動的に無効化された。</td>
 </tr>
 <tr>
 <td>Unconfirmed</td>
 <td>100003</td>
-<td>一覧登録未確認 — The subscriber has not clicked on the confirmation link upon registration or import.</td>
+<td>一覧登録未確認 — 一覧メンバーはまだサブスクの同意はしていない。</td>
 </tr>
 <tr>
 <td>Blocked</td>
@@ -326,17 +326,17 @@
 <tr>
 <td>SMTPApiError</td>
 <td>100007</td>
-<td>SMTP API エラー — An error occurred while accepting an email through the SMTP API.</td>
+<td>SMTP API エラー — SMTP API経由でメールを受け取った時、エラーが発生した。</td>
 </tr>
 <tr>
 <td>InboundError</td>
 <td>100008</td>
-<td>処理失敗 — Unable to deliver inbound message to destination inbound hook.</td>
+<td>処理失敗 — 受信処理が途中で失敗した。</td>
 </tr>
 <tr>
 <td>DMARCPolicy</td>
 <td>100009</td>
-<td>DMARC規定 — Email rejected due DMARC Policy.</td>
+<td>DMARC規定 — DMARC ポリシーによって送信が失敗した.</td>
 </tr>
 <tr>
 <td>TemplateRenderingFailed</td>
