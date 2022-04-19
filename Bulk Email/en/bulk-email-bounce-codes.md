@@ -35,5 +35,5 @@ The following error codes are from the bulk email systems we use to send newslet
 | Blocked | 100006 | ISP block — Blocked from this ISP due to content or blacklisting. |
 | SMTPApiError | 100007 | SMTP API error — An error occurred while accepting an email through the SMTP API. |
 | InboundError | 100008 | Processing failed — Unable to deliver inbound message to destination inbound hook. |
-| DMARCPolicy | 100009 | DMARC Policy — Email rejected due DMARC Policy. |
+| DMARCPolicy | 100009 | DMARC Policy — Email rejected due to DMARC Policy. |
 | TemplateRenderingFailed | 100010 | Template rendering failed — An error occurred while attempting to render your template. |
