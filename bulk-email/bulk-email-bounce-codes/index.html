@@ -25,11 +25,11 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/static/favicon.ico" rel="icon" />
-    <link href="/resources/css/retype.css?v=1.11.2.703659883155" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.703661130590" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.703659883155" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.703661130590" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.703659883155" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.703661130590" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -236,12 +236,12 @@
 <tr>
 <td>HardBounce</td>
 <td>1</td>
-<td>ハードバウンス — The server was unable to deliver your message (ex: unknown user, mailbox not found).</td>
+<td>ハードバウンス — サーバーは送信したメールを届けることが出来ませんでした。 (例: ユーザーが無い、メールボックスが無い).</td>
 </tr>
 <tr>
 <td>Transient</td>
 <td>2</td>
-<td>送信遅れ — The server could not temporarily deliver your message (ex: Message is delayed due to network troubles).</td>
+<td>送信遅れ — The server could not temporarily deliver your message (例: Message is delayed due to network troubles).</td>
 </tr>
 <tr>
 <td>Unsubscribe</td>
@@ -256,7 +256,7 @@
 <tr>
 <td>AutoResponder</td>
 <td>64</td>
-<td>自動応対 — Automatic email responder (ex: &quot;Out of Office&quot; or &quot;On Vacation&quot;).</td>
+<td>自動応対 — 自動レスポンスメッセージが戻って来た (例: &quot;手が離さない&quot; 又は &quot;休み中&quot;).</td>
 </tr>
 <tr>
 <td>AddressChange</td>
@@ -266,12 +266,12 @@
 <tr>
 <td>DnsError</td>
 <td>256</td>
-<td>DNSエラー — A temporary DNS error.</td>
+<td>DNSエラー — 一時的DNSエラーが発生した.</td>
 </tr>
 <tr>
 <td>SpamNotification</td>
 <td>512</td>
-<td>スパム通知 — The message was delivered, but was either blocked by the user, or classified as spam, bulk mail, or had rejected content.</td>
+<td>スパム通知 — メッセージ届けたが、ユーザーがブロックを掛けたか、スパムやバルクメールとしてフラグを立てた。</td>
 </tr>
 <tr>
 <td>OpenRelayTest</td>
@@ -281,17 +281,17 @@
 <tr>
 <td>Unknown</td>
 <td>2048</td>
-<td>区別不可 — Unable to classify the NDR.</td>
+<td>区別不可 — 区別が出来ないNDR.</td>
 </tr>
 <tr>
 <td>SoftBounce</td>
 <td>4096</td>
-<td>ソフトバウンス — Unable to temporarily deliver message (i.e. mailbox full, account disabled, exceeds quota, out of disk space).</td>
+<td>ソフトバウンス — 一時的に送信したメールを届けることが出来ませんでした。 (例: メールボックスがいっぱい、アカウントが無効になっている、保存クォータをオーバしている、ハードディスク保存領域がもう無い).</td>
 </tr>
 <tr>
 <td>VirusNotification</td>
 <td>8192</td>
-<td>ウイルス通知 — The bounce is actually a virus notification warning about a virus/code infected message.</td>
+<td>ウイルス通知 — 受信メッセージにウイルスを検知したと言う通知。</td>
 </tr>
 <tr>
 <td>ChallengeVerification</td>
@@ -301,12 +301,12 @@
 <tr>
 <td>BadEmailAddress</td>
 <td>100000</td>
-<td>無効なメールアドレス — The address is not a valid email address.</td>
+<td>無効なメールアドレス — メールアドレス事態が無効です。</td>
 </tr>
 <tr>
 <td>SpamComplaint</td>
 <td>100001</td>
-<td>スパム苦情 — The subscriber explicitly marked this message as spam.</td>
+<td>スパム苦情 — 受信者が本メールを明示的にスパムとしてフラグを立てた。</td>
 </tr>
 <tr>
 <td>ManuallyDeactivated</td>
@@ -321,7 +321,7 @@
 <tr>
 <td>Blocked</td>
 <td>100006</td>
-<td>ISPブロック — Blocked from this ISP due to content or blacklisting.</td>
+<td>ISPブロック — コンテントやブラックリストによる、処理しているISPがブロックを掛けた。</td>
 </tr>
 <tr>
 <td>SMTPApiError</td>
@@ -341,7 +341,7 @@
 <tr>
 <td>TemplateRenderingFailed</td>
 <td>100010</td>
-<td>テンプレート利用失敗 — An error occurred while attempting to render your template.</td>
+<td>テンプレート利用失敗 — メール送信をしようとした時、メールのコンテンツを作成することが出来なかった。</td>
 </tr>
 </tbody>
 </table>
